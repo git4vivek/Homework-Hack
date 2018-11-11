@@ -1,0 +1,261 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "homework hack",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "quit app",
+                        "stop program",
+                        "quit homework hack",
+                        "stop",
+                        "quit"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "welcomeIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "checkHomeworkIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "initHomeworkIntent",
+                    "slots": [
+                        {
+                            "name": "HomeworkType",
+                            "type": "HomeworkType",
+                            "samples": [
+                                "A {HomeworkType}",
+                                "{HomeworkType}",
+                                "It was a {HomeworkType}"
+                            ]
+                        },
+                        {
+                            "name": "DueDate",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "On {DueDate}",
+                                "{DueDate}",
+                                "It's due on {DueDate}"
+                            ]
+                        },
+                        {
+                            "name": "DueTime",
+                            "type": "AMAZON.TIME",
+                            "samples": [
+                                "{DueTime}",
+                                "At {DueTime}",
+                                "It's due at {DueTime}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I have a {HomeworkType}",
+                        "I have to {HomeworkType}",
+                        "I have a {HomeworkType} due on {DueDate}",
+                        "I have a {HomeworkType} due on {DueDate} at {DueTime}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "wantWork",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "doHomework",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "homeworkTime",
+                    "slots": [
+                        {
+                            "name": "duration",
+                            "type": "AMAZON.DURATION"
+                        }
+                    ],
+                    "samples": [
+                        "Can I have {duration}",
+                        "I'm gonna need {duration}",
+                        "It's gonna take {duration}",
+                        "I need {duration}",
+                        "{duration}"
+                    ]
+                },
+                {
+                    "name": "promptForLater",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "somethingElse",
+                    "slots": [],
+                    "samples": [
+                        "can I do something else",
+                        "I want to work on something else",
+                        "I want to do something else"
+                    ]
+                },
+                {
+                    "name": "finishedHomework",
+                    "slots": [],
+                    "samples": [
+                        "I'm finished",
+                        "I'm done",
+                        "I'm done with that assignment",
+                        "I finished my work",
+                        "I'm done with my last assignment"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "HomeworkType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Study",
+                                "synonyms": [
+                                    "Study",
+                                    "Test",
+                                    "Quiz"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Reading",
+                                "synonyms": [
+                                    "Read an essay",
+                                    "Read a book",
+                                    "Read"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Paper",
+                                "synonyms": [
+                                    "write a essay",
+                                    "Write an essay",
+                                    "Write a paper",
+                                    "Write"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Homework",
+                                "synonyms": [
+                                    "homework"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "welcomeIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": []
+                },
+                {
+                    "name": "initHomeworkIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "HomeworkType",
+                            "type": "HomeworkType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.305365482995.1269677895310"
+                            }
+                        },
+                        {
+                            "name": "DueDate",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.305365482995.1114959218935"
+                            }
+                        },
+                        {
+                            "name": "DueTime",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.305365482995.446901577335"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.305365482995.1269677895310",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Was that a paper, homework, reading, or something you need to study for?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.305365482995.1114959218935",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What day is the {HomeworkType} due?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.305365482995.446901577335",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What time is {HomeworkType} due?"
+                    }
+                ]
+            }
+        ]
+    }
+}
